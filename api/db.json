@@ -1,0 +1,19 @@
+{
+  "streams": [
+    {
+      "title": "My Blog",
+      "description": "This is my first blog",
+      "id": 1
+    },
+    {
+      "title": "Test Blog",
+      "description": "This is my test blog",
+      "id": 2
+    },
+    {
+      "title": "Blog content",
+      "description": "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": 3
+    }
+  ]
+}
