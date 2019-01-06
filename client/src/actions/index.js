@@ -7,7 +7,7 @@ export const createStream = (formValues) => {
     const response = await streams.post('/streams', formValues);//making a post request with axios and 'response' will collect the saved record of the stream we create
     dispatch({ type: 'CREATE_STREAM', payload: response.data });
     //Do some programmatic navigation to get the user back to the root route
-    history.push('/');
+    history.push('/'); //this way you automatically get navigated to the stream list
   }
 };
 
@@ -27,7 +27,7 @@ export const fetchStream = (id) => {
 
 export const editStream = (id, formValues) => {
   return async (dispatch) => {
-    const response = await streams.put('/streams/${id}', formValues);
+    const response = await streams.patch(`/streams/${id}`, formValues);
     dispatch({ type: 'EDIT_STREAM', payload: response.data });
     history.push('/');
   }
@@ -35,7 +35,7 @@ export const editStream = (id, formValues) => {
 
 export const deleteStream = (id) => {
   return async (dispatch) => {
-    await streams.delete('/streams/${id}');
+    await streams.delete(`/streams/${id}`);
     dispatch({ type: 'DELETE_STREAM', payload: id });
     history.push('/');
   }
