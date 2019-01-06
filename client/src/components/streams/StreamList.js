@@ -1,23 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchStreams } from '../../actions';
+import { fetchStreams, deleteStream, editStream } from '../../actions';
 import { Link } from 'react-router-dom';
 
-//At line 10, calling action creator inside componentDidMount so that the list is fetch only once
+//At line 10, calling action creator inside componentDidMount so that the list is fetched only once
 
 class StreamList extends React.Component {
   componentDidMount() {
     this.props.fetchStreams();
   }
-
+//In line 19-20 we want that on click of delete we reach out to our API which will fetch that stream and delete it
   renderAdmin(stream) {
     return (
       <div className="right floated content">
-        <button className="ui button primary">
-        Edit
-        </button>
-        <button className="ui button negative">
-        Delete
+        <Link to={`/blogs/edit/${stream.id}`}
+        className="ui button primary">
+          Edit
+        </Link>
+        <button onClick={() => this.props.deleteStream(stream.id)} className="ui button negative">
+          Delete
         </button>
       </div>
     )
@@ -41,7 +42,7 @@ class StreamList extends React.Component {
   renderCreate() {
     return (
       <div style={{ textAlign: 'right' }}>
-        <Link to="/streams/new" className="ui button primary">
+        <Link to="/blogs/new" className="ui button primary">
           Create Stream
         </Link>
       </div>
@@ -51,7 +52,7 @@ class StreamList extends React.Component {
   render() {
     return (
       <div>
-        <h2>Streams</h2>
+        <h2>Blogs</h2>
         <div className="ui celled list">{this.renderList()}</div>
         {this.renderCreate()}
       </div>
@@ -63,4 +64,4 @@ const mapStateToProps = (state) => {
   return { streams: Object.values(state.streams) };
 } ;
 
-export default connect(mapStateToProps, { fetchStreams })(StreamList);
+export default connect(mapStateToProps, { fetchStreams, deleteStream, editStream })(StreamList);

@@ -1,11 +1,5 @@
 import _ from 'lodash';
-import {
-  CREATE_STREAM,
-  FETCH_STREAM,
-  FETCH_STREAMS,
-  EDIT_STREAM,
-  DELETE_STREAM
-} from '../actions';
+
 
 //Add some Boiler Plate for the Reducer
 export default (state = {}, action) => {
